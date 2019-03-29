@@ -79,6 +79,27 @@ html, body {
   to {-webkit-transform: translate(-50%, -50%) rotateZ(360deg);transform: translate(-50%, -50%) rotateZ(360deg);}
 }
 
+.loading {
+  height: 0;
+  width: 0;
+  padding: 15px;
+  border: 6px solid #ccc;
+  border-right-color: #888;
+  border-radius: 22px;
+  -webkit-animation: rotate 1s infinite linear;
+  animation: rotate 1s infinite linear;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -25px;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Table Style */
 .tableWrap h1 {
   margin: 50px;
@@ -86,12 +107,18 @@ html, body {
   color: #fff;
   font-size: 20px;
 }
-.tableWrap table {
+.tableWrap .table {
+  min-height: 120px;
+  background: #fff;
   width: 60%;
   margin: 0 auto 30px;
-  background: #fff;
   color: #777;
+  position: relative;
   border-radius: 5px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.tableWrap table {
+  width: 100%
 }
 .tableWrap table th,
 .tableWrap table td {
@@ -104,3 +131,4 @@ html, body {
 .tableWrap table tbody tr:nth-child(2n + 2) td {
   background: #efefef;
 }
+

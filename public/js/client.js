@@ -28,6 +28,7 @@ function establishSocket() {
   var handleUpdateMessage = function(data) {
     // console.log(data);
     $('#dataLog').empty();
+    $('.js-loading').hide();
     var dataTime = new Date(new Date().getTime() + 4*60*60*1000).toLocaleTimeString();
     JSON.parse(data).forEach(([name, price]) => {
       var tr = document.createElement('tr');
