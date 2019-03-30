@@ -6,6 +6,8 @@ html, body {
   font-family: 'helvetica', sans-serif;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  box-sizing: border-box;
 }
 
 /* Preloader */
@@ -101,8 +103,18 @@ html, body {
 }
 
 /* Table Style */
+.container {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+.tableWrap {
+  padding: 50px 0 0;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+}
 .tableWrap h1 {
-  margin: 50px;
+  margin: 0 0 50px; 
   text-align: center;
   color: #fff;
   font-size: 20px;
@@ -131,4 +143,27 @@ html, body {
 .tableWrap table tbody tr:nth-child(2n + 2) td {
   background: #efefef;
 }
+.tableWrap table tbody tr:nth-child(2n + 2) td.green,
+.tableWrap table td.green {
+  color: #fff;
+  background: #2ECC40;
+}
 
+.tableWrap table tbody tr:nth-child(2n + 2) td.red,
+.tableWrap table td.red {
+  color: #fff;
+  background: #FF4136;
+}
+
+/* Footer Style */
+footer, .push {
+  height: 50px;
+}
+footer {
+  text-align: center;
+  color: #fff;
+  line-height: 20px;
+}
+footer a {
+  color: #00ffe9;
+}

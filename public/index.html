@@ -7,37 +7,42 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
-
-    <div class="preloader-wrap js-preloader">
-      <div class="preloader">
-        <div class="indicator"></div>
-        <span class="loading_text">Loading...</span>
+    <div class="container">
+      <div class="preloader-wrap js-preloader">
+        <div class="preloader">
+          <div class="indicator"></div>
+          <span class="loading_text">Loading...</span>
+        </div>
       </div>
+
+      <div class="tableWrap">
+        <h1>Welcome to Live Stock!</h1>
+        <div class="table">
+          <div class="loading js-loading"></div>
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Ticker
+                </th>
+                <th>
+                  Price
+                </th>
+                <th>
+                  Last Update
+                </th>
+              </tr>
+            </thead>
+            <tbody id="dataLog"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="push"></div>
     </div>
 
-    <div class="tableWrap">
-      <h1>Welcome to Live Stock!</h1>
-      <div class="table">
-        <div class="loading js-loading"></div>
-        <table>
-          <thead>
-            <tr>
-              <th>
-                Ticker
-              </th>
-              <th>
-                Price
-              </th>
-              <th>
-                Last Update
-              </th>
-            </tr>
-          </thead>
-          <tbody id="dataLog"></tbody>
-        </table>
-      </div>
-    </div>
-
+    <footer>
+      Copyright &copy; <a href="https://www.thisissingh.com" target="_blank">Vikas Singh</a>, 2018
+    </footer>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="js/client.js"></script>
   </body>

@@ -26,11 +26,11 @@ function establishSocket() {
   }
 
   var handleUpdateMessage = function(data) {
-    // console.log(data);
     $('#dataLog').empty();
     $('.js-loading').hide();
     var dataTime = new Date(new Date().getTime() + 4*60*60*1000).toLocaleTimeString();
     JSON.parse(data).forEach(([name, price]) => {
+      var minMaxValue = compareValue(name, price);
       var tr = document.createElement('tr');
       var tdName = document.createElement('td');
       var tdPrice = document.createElement('td');
@@ -38,11 +38,29 @@ function establishSocket() {
       tdName.innerHTML = name;
       tdPrice.innerHTML = Math.round(price * 100) / 100;
       tdTime.innerHTML = dataTime;
+      tdName.classList.add(minMaxValue);
+      tdPrice.classList.add(minMaxValue);
+      tdTime.classList.add(minMaxValue);
       tr.appendChild(tdName);
       tr.appendChild(tdPrice);
       tr.appendChild(tdTime);
       $('#dataLog').append(tr);
     });
+  }
+
+  var compareValue = function(name, price) {
+    var classValue = undefined;
+    $('#dataLog').find('tr').each((index, item) => {
+      if($(item).find('td:first-child').text() == name) {
+        if((Math.round(price * 100) / 100) > parseFloat($(item).find('td:nth-child(2)').text())) {
+          classValue = 'green';
+        }else {
+          classValue = 'red';
+        }
+      }
+    });
+
+    return classValue;
   }
 
   window.addEventListener('beforeunload', function() {
